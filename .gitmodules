@@ -1,0 +1,6 @@
+[submodule "zxing"]
+	path = zxing
+	url = git://github.com/youknowone/zxing.git
+[submodule "CaulySDK3"]
+	path = CaulySDK3
+	url = git://github.com/youknowone/CaulySDK3.git
