@@ -5,4 +5,6 @@ Do you really need embedded web view, SNS sharing, contents analyzer or somethin
 
 Take this. And keep the convenience.
 
+  * Open with Safari
+  * Copy to Clipboard
   * History is coming soon.
