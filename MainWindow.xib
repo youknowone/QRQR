@@ -168,6 +168,14 @@
 					</object>
 					<int key="connectionID">25</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">rootViewController</string>
+						<reference key="source" ref="117978783"/>
+						<reference key="destination" ref="867081405"/>
+					</object>
+					<int key="connectionID">26</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -262,7 +270,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">25</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -299,13 +307,54 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">QRViewController</string>
+					<string key="className">QRHistoryViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="_tableViewController">UITableViewController</string>
+						<string key="navigationBar">UINavigationBar</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="_tableViewController">
+							<string key="name">_tableViewController</string>
+							<string key="candidateClassName">UITableViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="navigationBar">
+							<string key="name">navigationBar</string>
+							<string key="candidateClassName">UINavigationBar</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/QRHistoryViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">QRViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="dismissHistory">id</string>
+						<string key="presentHistory">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="dismissHistory">
+							<string key="name">dismissHistory</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="presentHistory">
+							<string key="name">presentHistory</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="historyController">QRHistoryViewController</string>
 						<string key="resultTextView">UITextView</string>
 						<string key="webViewController">QRWebViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="historyController">
+							<string key="name">historyController</string>
+							<string key="candidateClassName">QRHistoryViewController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="resultTextView">
 							<string key="name">resultTextView</string>
 							<string key="candidateClassName">UITextView</string>

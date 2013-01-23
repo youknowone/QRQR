@@ -9,18 +9,25 @@
 #import "ZXingWidgetController.h"
 
 @class QRWebViewController;
+@class QRHistoryViewController;
 
 @interface QRViewController : UIViewController<ZXingDelegate, UIActionSheetDelegate> {
     IBOutlet QRWebViewController *webViewController;
 
     IBOutlet UITextView *resultTextView;
     ZXingWidgetController *widgetController;
+    UIButton *historyButton;
 
-    NSString *qrResult;
-    BOOL needScanning;
+    IBOutlet QRHistoryViewController *historyController;
+
+    NSString *_decodedString;
+    BOOL _needsScanning;
 }
 
-@property(nonatomic, retain) NSString *qrResult;
+@property(nonatomic, retain) NSString *decodedString;
+
+- (IBAction)presentHistory;
+- (IBAction)dismissHistory;
 
 @end
 

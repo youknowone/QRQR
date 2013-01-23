@@ -8,20 +8,29 @@
 
 #import "QRViewController.h"
 #import "QRCodeReader.h"
+#import "QRHistory.h"
+#import "QRHistoryViewController.h"
 
 @implementation QRViewController
-@synthesize qrResult;
+@synthesize decodedString=_decodedString;
 
 - (void)initAsQRViewController {
-    needScanning = YES;        
+    self->_needsScanning = YES;
     widgetController = [[ZXingWidgetController alloc] initWithDelegate:self showCancel:NO OneDMode:NO showLicense:YES];
+
     QRCodeReader* qrcodeReader = [[QRCodeReader alloc] init];
     NSSet *readers = [[NSSet alloc] initWithObjects:qrcodeReader, nil];
     [qrcodeReader release];
     widgetController.readers = readers;
     [readers release];
+    
     NSBundle *mainBundle = [NSBundle mainBundle];
     widgetController.soundToPlay = [NSURL fileURLWithPath:[mainBundle pathForResource:@"beep-beep" ofType:@"aiff"] isDirectory:NO];
+
+    self->historyButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+    [self->historyButton setTitle:@"History" forState:UIControlStateNormal];
+    [self->historyButton addTarget:self action:@selector(presentHistory) forControlEvents:UIControlEventTouchUpInside];
+    self->historyButton.frame = CGRectMake(.0, .0, 80.0, 28.0);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -36,16 +45,27 @@
     return self;
 }
 
-- (void) presentScanViewController {
+- (void)dealloc {
+    [self->widgetController release];
+    [self->historyButton release];
+    [super dealloc];
+}
+
+- (void)presentScanViewController {
     [self presentModalViewController:widgetController animated:NO];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-    resultTextView.text = qrResult;
-    if (needScanning) {
+    resultTextView.text = self.decodedString;
+    if (self->_needsScanning) {
         [self presentScanViewController];
-        needScanning = NO;
+        self->_needsScanning = NO;
+    }
+
+    if (!self->historyButton.superview) {
+        self->historyButton.center = CGPointMake(48.0, self.view.frame.size.height + 6);
+        [widgetController.overlayView addSubview:self->historyButton];
     }
 }
 
@@ -56,6 +76,16 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
+- (void)presentHistory {
+    [self dismissModalViewControllerAnimated:NO];
+    [self presentModalViewController:self->historyController animated:YES];
+}
+
+- (void)dismissHistory {
+    [self dismissModalViewControllerAnimated:NO];
+    [self presentModalViewController:widgetController animated:YES];
+}
+
 #pragma mark ZXingDelegate
 
 - (void) zxingControllerDidCancel:(ZXingWidgetController *)controller {
@@ -63,7 +93,8 @@
 }
 
 - (void) zxingController:(ZXingWidgetController *)controller didScanResult:(NSString *)result {
-	self.qrResult = result;
+	self.decodedString = result;
+    [[QRHistory defaultHistory] put:result];
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedStringFromTable(@"Select Action", @"qrqr", @"Menu selection title") delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"common", @"") destructiveButtonTitle:NSLocalizedStringFromTable(@"Open with Safari", @"qrqr", @"Menu selection name") otherButtonTitles:NSLocalizedStringFromTable(@"Copy to Clipboard", @"qrqr", @"Menu selection name"), nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
@@ -74,16 +105,16 @@
 #pragma mark UIActionSheet delegate
 
 - (void) actionSheetCancel:(UIActionSheet *)actionSheet {
-	//[self 
+
 }
 
 - (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch (buttonIndex) {
 		case 0:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:resultTextView.text]];
+            [[UIApplication sharedApplication] openURL:self.decodedString.URL];
             break;
 		case 1:
-            [UIPasteboard generalPasteboard].string = qrResult;
+            [UIPasteboard generalPasteboard].string = self.decodedString;
             break;
 		default:
 			break;
