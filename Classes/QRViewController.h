@@ -16,6 +16,7 @@
 
     IBOutlet UITextView *resultTextView;
     ZXingWidgetController *widgetController;
+    UIView *bannerView;
     UIButton *historyButton;
 
     IBOutlet QRHistoryViewController *historyController;

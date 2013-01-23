@@ -11,6 +11,8 @@
 #import "QRHistory.h"
 #import "QRHistoryViewController.h"
 
+#import "AdMobHelper.h"
+
 @implementation QRViewController
 @synthesize decodedString=_decodedString;
 
@@ -55,17 +57,25 @@
     [self presentModalViewController:widgetController animated:NO];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self->bannerView = [[UIView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 50.0)];
+    self->bannerView.backgroundColor = [UIColor whiteColor];
+    [self->widgetController.overlayView addSubview:self->bannerView];
+    AdMobQuickSet(@"a150ffb66fc484c", self, self->bannerView);
+
+    if (!self->historyButton.superview) {
+        self->historyButton.center = CGPointMake(48.0, widgetController.overlayView.frame.size.height - 20.0);
+        [widgetController.overlayView addSubview:self->historyButton];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
     resultTextView.text = self.decodedString;
     if (self->_needsScanning) {
         [self presentScanViewController];
         self->_needsScanning = NO;
-    }
-
-    if (!self->historyButton.superview) {
-        self->historyButton.center = CGPointMake(48.0, self.view.frame.size.height + 6);
-        [widgetController.overlayView addSubview:self->historyButton];
     }
 }
 

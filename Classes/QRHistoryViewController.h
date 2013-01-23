@@ -10,6 +10,7 @@
 
 @interface QRHistoryViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate> {
     IBOutlet UITableViewController *_tableViewController;
+    IBOutlet UIView *bannerView;
 }
 
 @property(nonatomic, retain) IBOutlet UINavigationBar *navigationBar;

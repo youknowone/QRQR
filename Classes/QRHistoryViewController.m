@@ -9,6 +9,8 @@
 #import "QRHistory.h"
 #import "QRHistoryViewController.h"
 
+#import "AdMobHelper.h"
+
 @implementation QRHistoryViewController
 
 UIImage *QRHistoryViewControllerFavoriteLightImage = nil;
@@ -19,6 +21,11 @@ UIImage *QRHistoryViewControllerFavoriteDarkImage = nil;
         QRHistoryViewControllerFavoriteLightImage = [[UIImage imageNamed:@"favorite.png"] retain];
         QRHistoryViewControllerFavoriteDarkImage = [[UIImage imageNamed:@"favorite-dark.png"] retain];
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    AdMobQuickSet(@"a150ffb66fc484c", self, self->bannerView);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

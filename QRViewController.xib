@@ -148,10 +148,10 @@
 						<object class="IBUITableView" id="275277113">
 							<reference key="NSNextResponder" ref="349932184"/>
 							<int key="NSvFlags">274</int>
-							<string key="NSFrame">{{0, 44}, {320, 504}}</string>
+							<string key="NSFrame">{{0, 44}, {320, 454}}</string>
 							<reference key="NSSuperview" ref="349932184"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="644899783"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<reference key="IBUIBackgroundColor" ref="912674769"/>
 							<bool key="IBUIClipsSubviews">YES</bool>
@@ -186,6 +186,21 @@
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 							</array>
+						</object>
+						<object class="IBUIView" id="644899783">
+							<reference key="NSNextResponder" ref="349932184"/>
+							<int key="NSvFlags">266</int>
+							<string key="NSFrame">{{0, 498}, {320, 50}}</string>
+							<reference key="NSSuperview" ref="349932184"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<object class="NSColor" key="IBUIBackgroundColor">
+								<int key="NSColorSpace">3</int>
+								<bytes key="NSWhite">MQA</bytes>
+								<reference key="NSCustomColorSpace" ref="242678235"/>
+							</object>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 					</array>
 					<string key="NSFrame">{{0, 20}, {320, 548}}</string>
@@ -280,6 +295,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">bannerView</string>
+						<reference key="source" ref="334216697"/>
+						<reference key="destination" ref="644899783"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="275277113"/>
 						<reference key="destination" ref="334216697"/>
@@ -369,6 +392,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="275277113"/>
 							<reference ref="276400337"/>
+							<reference ref="644899783"/>
 						</array>
 						<reference key="parent" ref="334216697"/>
 					</object>
@@ -404,6 +428,11 @@
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">41</int>
+						<reference key="object" ref="644899783"/>
+						<reference key="parent" ref="349932184"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -420,6 +449,7 @@
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -428,7 +458,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">40</int>
+			<int key="maxID">42</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -437,12 +467,17 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="_tableViewController">UITableViewController</string>
+						<string key="bannerView">UIView</string>
 						<string key="navigationBar">UINavigationBar</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="_tableViewController">
 							<string key="name">_tableViewController</string>
 							<string key="candidateClassName">UITableViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="bannerView">
+							<string key="name">bannerView</string>
+							<string key="candidateClassName">UIView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="navigationBar">
 							<string key="name">navigationBar</string>
