@@ -7,4 +7,4 @@ Take this. And keep the convenience.
 
   * Open with Safari
   * Copy to Clipboard
-  * History is coming soon.
+  * History
