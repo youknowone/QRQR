@@ -6,10 +6,11 @@
 //  Copyright 2011 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UI7Kit/UI7Kit.h>
 
 int main(int argc, char *argv[]) {
     @autoreleasepool {
+        [UI7Kit patchIfNeeded];
         return UIApplicationMain(argc, argv, nil, @"QRAppDelegate");
     }
 }
