@@ -1,5 +1,4 @@
-platform :ios
+platform :ios, '5.0'
 
-pod 'CaulySDK'
 pod 'AdMobHelper'
-pod 'FoundationExtension/UIKitExtension'
+pod 'FoundationExtension'

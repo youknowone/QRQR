@@ -6,7 +6,6 @@
 //  Copyright 2011 youknowone.org. All rights reserved.
 //
 
-#import "CaulyHelper.h"
 #import "QRAppDelegate.h"
 #import "QRViewController.h"
 
