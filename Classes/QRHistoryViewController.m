@@ -21,8 +21,8 @@ UIImage *QRHistoryViewControllerFavoriteDarkImage = nil;
 + (void)initialize {
     if (self == [QRHistoryViewController class]) {
         UIImage *defaultImage = [UIImage imageNamed:@"UI7TabBarItemFavoriteSelected"];
-        QRHistoryViewControllerFavoriteLightImage = [defaultImage imageByFilledWithColor:[UI7Kit kit].tintColor];
-        QRHistoryViewControllerFavoriteDarkImage = [defaultImage imageByFilledWithColor:[UIColor grayColor]];
+        QRHistoryViewControllerFavoriteLightImage = [[defaultImage imageByFilledWithColor:[UI7Kit kit].tintColor] retain];
+        QRHistoryViewControllerFavoriteDarkImage = [[defaultImage imageByFilledWithColor:[UIColor grayColor]] retain];
     }
 }
 
