@@ -28,11 +28,10 @@
 		38B68EBB13A74E270093DF11 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B68EB813A74E270093DF11 /* Icon72.png */; };
 		38B68EBC13A74E270093DF11 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B68EB913A74E270093DF11 /* Icon114.png */; };
 		38D1AFAE16AD22F900ED97D3 /* QRHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1AFAD16AD22F900ED97D3 /* QRHistoryViewController.m */; };
+		38D331271796B274009576B2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D331261796B274009576B2 /* Storyboard.storyboard */; };
 		38EF66A216AE21AA00781497 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EF66A116AE21AA00781497 /* AddressBook.framework */; };
 		38EF66A416AE21B200781497 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EF66A316AE21B200781497 /* AddressBookUI.framework */; };
 		38EF66A716AEDBD400781497 /* QRHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF66A616AEDBD400781497 /* QRHistory.m */; };
-		38EF66E916AF010E00781497 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 38EF66E816AF010E00781497 /* favorite.png */; };
-		38EF66EB16AF049A00781497 /* favorite-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 38EF66EA16AF049A00781497 /* favorite-dark.png */; };
 		38FFD43E131D46AC0070B778 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FFD43D131D46AC0070B778 /* libiconv.dylib */; };
 		38FFD44B131D472A0070B778 /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 38FFD44A131D472A0070B778 /* beep-beep.aiff */; };
 		78C1FDB9963D4A7494C48A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF49267A6BB4328A96F7E4B /* libPods.a */; };
@@ -87,12 +86,11 @@
 		38B68EB913A74E270093DF11 /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		38D1AFAC16AD22F900ED97D3 /* QRHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRHistoryViewController.h; sourceTree = "<group>"; };
 		38D1AFAD16AD22F900ED97D3 /* QRHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRHistoryViewController.m; sourceTree = "<group>"; };
+		38D331261796B274009576B2 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38EF66A116AE21AA00781497 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		38EF66A316AE21B200781497 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		38EF66A516AEDBD400781497 /* QRHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRHistory.h; sourceTree = "<group>"; };
 		38EF66A616AEDBD400781497 /* QRHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRHistory.m; sourceTree = "<group>"; };
-		38EF66E816AF010E00781497 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
-		38EF66EA16AF049A00781497 /* favorite-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite-dark.png"; sourceTree = "<group>"; };
 		38FFD406131D443B0070B778 /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = zxing/iphone/ZXingWidget/ZXingWidget.xcodeproj; sourceTree = SOURCE_ROOT; };
 		38FFD43D131D46AC0070B778 /* libiconv.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		38FFD43F131D46C00070B778 /* AudioToolbox.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -175,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				38FFD44A131D472A0070B778 /* beep-beep.aiff */,
+				38D331261796B274009576B2 /* Storyboard.storyboard */,
 				2899E5210DE3E06400AC0155 /* QRViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* QR-Info.plist */,
@@ -184,8 +183,6 @@
 				38B68EB713A74E270093DF11 /* Icon57.png */,
 				38B68EB813A74E270093DF11 /* Icon72.png */,
 				38B68EB913A74E270093DF11 /* Icon114.png */,
-				38EF66E816AF010E00781497 /* favorite.png */,
-				38EF66EA16AF049A00781497 /* favorite-dark.png */,
 				384F7FCC13AF12840058E5D7 /* Entitlements.plist */,
 			);
 			name = Resources;
@@ -315,8 +312,7 @@
 				384F7FCD13AF12840058E5D7 /* Entitlements.plist in Resources */,
 				389EAB66167F970F00024252 /* Default@2x.png in Resources */,
 				389EAB69167F977100024252 /* Default-568h@2x.png in Resources */,
-				38EF66E916AF010E00781497 /* favorite.png in Resources */,
-				38EF66EB16AF049A00781497 /* favorite-dark.png in Resources */,
+				38D331271796B274009576B2 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

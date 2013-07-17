@@ -76,6 +76,14 @@
     if (self->_needsScanning) {
         [self presentScanViewController];
         self->_needsScanning = NO;
+        #if 0
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self zxingController:widgetController didScanResult:@"The world simplest QR code decoder!"];
+        });
+        #endif
     }
 }
 

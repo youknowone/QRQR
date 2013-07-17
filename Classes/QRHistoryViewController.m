@@ -6,6 +6,8 @@
 //  Copyright (c) 2013년 3rddev.org. All rights reserved.
 //
 
+#import <UI7Kit/UI7Kit.h>
+
 #import "QRHistory.h"
 #import "QRHistoryViewController.h"
 
@@ -18,8 +20,9 @@ UIImage *QRHistoryViewControllerFavoriteDarkImage = nil;
 
 + (void)initialize {
     if (self == [QRHistoryViewController class]) {
-        QRHistoryViewControllerFavoriteLightImage = [[UIImage imageNamed:@"favorite.png"] retain];
-        QRHistoryViewControllerFavoriteDarkImage = [[UIImage imageNamed:@"favorite-dark.png"] retain];
+        UIImage *defaultImage = [UIImage imageNamed:@"UI7TabBarItemFavoriteSelected"];
+        QRHistoryViewControllerFavoriteLightImage = [defaultImage imageByFilledWithColor:[UI7Kit kit].tintColor];
+        QRHistoryViewControllerFavoriteDarkImage = [defaultImage imageByFilledWithColor:[UIColor grayColor]];
     }
 }
 
